@@ -1,0 +1,155 @@
+/* 1. Global Page Reset & Variables */
+:root {
+    --primary-color: #4f46e5;      /* Modern Indigo */
+    --primary-hover: #4338ca;      /* Darker Indigo */
+    --success-color: #10b981;      /* Emerald Green */
+    --danger-color: #ef4444;       /* Pastel Red */
+    --danger-hover: #dc2626;       /* Darker Red */
+    --bg-color: #f8fafc;           /* Light slate grey background */
+    --card-bg: #ffffff;            /* Pure white card */
+    --text-main: #1e293b;          /* Dark charcoal text */
+    --text-muted: #64748b;         /* Muted slate text */
+    --border-color: #e2e8f0;       /* Soft grey borders */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 2. Main App Card Container */
+.app-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 440px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+/* 3. Input & Add Button Styling */
+.input-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* 4. Dynamic To-Do List Container */
+ul#todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 5. To-Do Item Rows */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+/* Task Text logic */
+.todo-text {
+    flex: 1;
+    font-size: 0.95rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    padding-right: 12px;
+}
+
+/* Visual treat for completed items */
+.completed {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* Custom Delete Button styling */
+.delete-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.delete-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger-hover);
+}
+
+.delete-btn:active {
+    transform: scale(0.95);
+}
